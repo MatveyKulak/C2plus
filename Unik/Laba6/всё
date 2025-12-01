@@ -1,0 +1,123 @@
+// 1 задание
+/*#include <iostream>
+using namespace std;
+
+int main() {
+  system("chcp 1251 > nul");
+  char letter;
+
+  cout << "Введите букву русского алфавита от а до и: ";
+  cin >> letter;
+  switch (letter) {
+  case 'а': cout << "Арбуз" << endl; break;
+  case 'б': cout << "Бегемот" << endl; break;
+  case 'в': cout << "Ваза" << endl; break;
+  case 'г': cout << "Груша" << endl; break;
+  case 'д': cout << "Дом" << endl; break;
+  case 'е': cout << "Егор" << endl; break;
+  case 'ё': cout << "Ёж" << endl; break;
+  case 'ж': cout << "Жираф" << endl; break;
+  case 'з': cout << "Зебра" << endl; break;
+  case 'и': cout << "Игра" << endl; break;
+  default: cout << "Введена неверная буква." << endl; break;
+  }
+
+  return 0;
+}*/
+// 2 задание
+/*#include <iostream>
+using namespace std;
+
+// Функция для определения, является ли год високосным
+bool isLeapYear(int year) {
+    return (year % 4 == 0 && year % 100 != 0)  (year % 400 == 0);
+}
+
+// Функция для определения количества дней в месяце
+int daysInMonth(int month, int year) {
+    switch (month) {
+    case 1: return 31; // Январь
+    case 2: return isLeapYear(year) ? 29 : 28; // Февраль
+    case 3: return 31; // Март
+    case 4: return 30; // Апрель
+    case 5: return 31; // Май
+    case 6: return 30; // Июнь
+    case 7: return 31; // Июль
+    case 8: return 31; // Август
+    case 9: return 30; // Сентябрь
+    case 10: return 31; // Октябрь
+    case 11: return 30; // Ноябрь
+    case 12: return 31; // Декабрь
+    default: return 0; // Если номер месяца некорректен
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "Rus");
+    int day, month, year;
+
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+    cout << "Введите номер дня месяца: ";
+    cin >> day;
+    cout << "Введите год: ";
+    cin >> year;
+
+    // Проверка на корректность введенных данных
+    if (month < 1  month > 12) {
+        cout << "Некорректный номер месяца!" << endl;
+        return 1;
+    }
+
+    int daysInCurrentMonth = daysInMonth(month, year);
+    if (day < 1  day > daysInCurrentMonth) {
+        cout << "Некорректный номер дня!" << endl;
+        return 1;
+    }
+
+    // Вычисляем количество дней до конца месяца
+    int remainingDays = daysInCurrentMonth - day;
+
+    cout << "До конца месяца осталось " << remainingDays << " дней." << endl;
+
+    return 0;
+}*/
+// 3 задание
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    int m, k;
+    setlocale(LC_ALL, "RUS");
+    // Массивы для хранения названий мастей и достоинств
+    string suits[] = { "пик", "треф", "бубен", "червей" };
+    string ranks[] = {
+        "шестерка", "семерка", "восьмерка", "девятка", "десятка",
+        "валет", "дама", "король", "туз"
+    };
+
+    cout << "Введите номер масти (1 - пик, 2 - треф, 3 - бубен, 4 - червей): ";
+    cin >> m;
+    cout << "Введите номер достоинства карты (6 - 14): ";
+    cin >> k;
+
+    // Проверка на корректность введенных данных
+    if (m < 1  m > 4) {
+        cout << "Некорректный номер масти!" << endl;
+        return 1;
+    }
+
+    if (k < 6 || k > 14) {
+        cout << "Некорректный номер достоинства!" << endl;
+        return 1;
+    }
+
+    // Получение названия масти и достоинства карты
+    string suit = suits[m - 1];
+    string rank = ranks[k - 6];
+
+    // Вывод полного названия карты
+    cout << rank << " " << suit << endl;
+
+    return 0;
+}*/
